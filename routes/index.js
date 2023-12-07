@@ -1,6 +1,18 @@
 const { clearCookie } = require('../utils/session');
 
 /**
+ * Index Controller
+ * @param {import("express").Request} req 
+ * @param {import("express").Response} res 
+ * @param {import("express").NextFunction} next 
+ */
+function indexController(req, res, next) {
+  res.render('index', {
+    title: 'Express Login Registration System'
+  });
+}
+
+/**
  * Login Controller
  * @param {import("express").Request} req 
  * @param {import("express").Response} res 
@@ -48,6 +60,7 @@ function logoutController(req, res, next) {
 }
 
 module.exports = {
+  indexController,
   loginController,
   signupController,
   accountController,

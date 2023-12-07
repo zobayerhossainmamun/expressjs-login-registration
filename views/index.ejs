@@ -1,0 +1,24 @@
+<%- include('./layouts/header'); %>
+
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h4>Home Page</h4>
+
+                        <% if(IS_LOGIN){ %>
+                            <a href="/account" class="btn btn-primary">My Account</a>
+                        <% }else{ %>
+                            <a href="/login" class="btn btn-primary">Login</a>
+                            <a href="/signup" class="btn btn-primary">Signup</a>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('./layouts/footer'); %>

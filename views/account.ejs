@@ -7,6 +7,20 @@
                 <div class="card-body">
                     <div class="text-center">
                         <h4>Account Dashboard</h4>
+                        <table class="table mb-3">
+                            <tr>
+                                <td>Firstname</td>
+                                <td><%= AUTH_DATA.firstname; %></td>
+                            </tr>
+                            <tr>
+                                <td>Lastname</td>
+                                <td><%= AUTH_DATA.lastname; %></td>
+                            </tr>
+                            <tr>
+                                <td>Email</td>
+                                <td><%= AUTH_DATA.email; %></td>
+                            </tr>
+                        </table>
                         <a href="/account/logout" class="btn btn-primary">Logout</a>
                     </div>
                 </div>

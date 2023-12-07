@@ -20,7 +20,7 @@ $('form[data-form="true"]').submit(function (e) {
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>`);
             }
-            if (rsp.redirect_url != "") {
+            if (typeof rsp.redirect_url !== 'undefined') {
                 setTimeout(function () {
                     window.location.href = rsp.redirect_url;
                 }, 2000);
