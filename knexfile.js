@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 // Update with your config settings.
 
 /**

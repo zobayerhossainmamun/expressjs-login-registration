@@ -1,6 +1,6 @@
 /**
  * Set cookies to browser.
- * @param {Response} res 
+ * @param {import("express").Response} res 
  * @param {string} key 
  * @param {string} value 
  * @param {string} expires 
@@ -39,7 +39,7 @@ const setCookie = (res, key, value, expires) => {
 
 /**
  * Get Cookies from browser by key.
- * @param {Request} req 
+ * @param {import("express").Request} req 
  * @param {string} key 
  * @returns {string}
  */
@@ -53,7 +53,7 @@ const getCookie = (req, key) => {
 
 /**
  * Clear cookie from browser by key.
- * @param {Response} res 
+ * @param {import("express").Response} res 
  * @param {string} key 
  */
 const clearCookie = (res, key) => {

@@ -1,3 +1,5 @@
+const { clearCookie } = require('../utils/session');
+
 /**
  * Login Controller
  * @param {import("express").Request} req 
@@ -34,8 +36,20 @@ function accountController(req, res, next) {
   });
 }
 
+/**
+ * Logout account route
+ * @param {import("express").Request} req 
+ * @param {import("express").Response} res 
+ * @param {import("express").NextFunction} next 
+ */
+function logoutController(req, res, next) {
+  clearCookie(res, process.env.SESSION_KEY);
+  res.redirect('/');
+}
+
 module.exports = {
   loginController,
   signupController,
-  accountController
+  accountController,
+  logoutController
 }

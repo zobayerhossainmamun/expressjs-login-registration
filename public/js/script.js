@@ -15,11 +15,9 @@ $('form[data-form="true"]').submit(function (e) {
         success: function (rsp) {
             if (rsp.status == 1) {
                 $(save_id).show();
-                $(save_id).html(`<div class="alert alert-success mb-0">
+                $(save_id).html(`<div class="alert alert-success alert-dismissible fade show mb-0">
                     <strong>Success!</strong> ${rsp.message}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>`);
             }
             if (rsp.redirect_url != "") {
@@ -28,11 +26,9 @@ $('form[data-form="true"]').submit(function (e) {
                 }, 2000);
             }
             if (rsp.status == 0) {
-                $(save_id).html(`<div class="alert alert-danger mb-0">
+                $(save_id).html(`<div class="alert alert-danger alert-dismissible fade show mb-0">
                     <strong>Error!</strong> ${rsp.message}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>`);
             }
             submit_button.removeAttr("disabled");
@@ -40,11 +36,9 @@ $('form[data-form="true"]').submit(function (e) {
         }, error: function (err) {
             submit_button.removeAttr("disabled");
             submit_button.text(btn_text);
-            $(save_id).html(`<div class="alert alert-danger mb-0">
+            $(save_id).html(`<div class="alert alert-danger alert-dismissible fade show mb-0">
                 <strong>Error!</strong> Oops! Some error occured.
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>`);
         }
     });
